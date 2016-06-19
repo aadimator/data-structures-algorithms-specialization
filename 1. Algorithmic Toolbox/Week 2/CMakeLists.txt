@@ -7,7 +7,7 @@ set(SOURCE_FILES
 #    fib.cc
 #    fibonacci_huge.cpp
 #    fibonacci_last_digit.cpp
-    gcd.cpp
-#    lcm.cpp
+#    gcd.cpp
+    lcm.cpp
         )
 add_executable(Week_2 ${SOURCE_FILES})

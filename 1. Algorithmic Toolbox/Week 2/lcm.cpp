@@ -1,13 +1,18 @@
 #include <iostream>
 
-long long lcm(int a, int b) {
-  //write your code here
-  return a*b;
+
+int euclidGCD (long a, long b) {
+    if (b == 0) return a;
+    return euclidGCD(b, a%b);
+}
+
+long long lcm(long long a, long long b) {
+    return (a * b)/euclidGCD(a, b);
 }
 
 int main() {
-  int a, b;
-  std::cin >> a >> b;
-  std::cout << lcm(a, b) << std::endl;
-  return 0;
+    long long a, b;
+    std::cin >> a >> b;
+    std::cout << lcm(a, b) << std::endl;
+    return 0;
 }
