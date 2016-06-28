@@ -4,9 +4,9 @@ project(Week_4)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 set(SOURCE_FILES
-    binary_search.cpp
+#    binary_search.cpp
 #    inversions.cpp
-#    majority_element.cpp
+    majority_element.cpp
 #    points_and_segments.cpp
 #    sorting.cpp
         )
