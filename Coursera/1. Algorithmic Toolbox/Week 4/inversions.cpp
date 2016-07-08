@@ -4,22 +4,52 @@
 using std::vector;
 
 long long get_number_of_inversions(vector<int> &a, vector<int> &b, size_t left, size_t right) {
-  long long number_of_inversions = 0;
-  if (right <= left + 1) return number_of_inversions;
-  size_t ave = left + (right - left) / 2;
-  number_of_inversions += get_number_of_inversions(a, b, left, ave);
-  number_of_inversions += get_number_of_inversions(a, b, ave, right);
-  //write your code here
-  return number_of_inversions;
+    long long number_of_inversions = 0;
+    if (right <= left + 1) return number_of_inversions;
+    size_t ave = left + (right - left) / 2;
+    number_of_inversions += get_number_of_inversions(a, b, left, ave);
+    number_of_inversions += get_number_of_inversions(a, b, ave, right);
+
+    size_t i = left, j = ave, index = left;
+    while (i < ave && j < right) { // while both aren't empty
+        if (a[i] <= a[j]) { // if left one is smaller
+            b[index] = a[i]; // just add it to the output vector
+            ++i;
+        } else { // if left one is bigger
+            b[index] = a[j];
+            number_of_inversions += ave - i; // number of elements greater than the right one
+            ++j;
+        }
+        ++index; // to track the index of the sorted output array
+    }
+
+    // if some elements are left over, add them in the sorted output
+    while (i < ave) {
+        b[index] = a[i];
+        ++i;
+        ++index;
+    }
+    while (j < right) {
+        b[index] = a[j];
+        ++j;
+        ++index;
+    }
+
+    // sort the input array too
+    for (int z = left; z < right; z++) {
+        a[z] = b[z];
+    }
+
+    return number_of_inversions;
 }
 
 int main() {
-  int n;
-  std::cin >> n;
-  vector<int> a(n);
-  for (size_t i = 0; i < a.size(); i++) {
-    std::cin >> a[i];
-  }
-  vector<int> b(a.size());
-  std::cout << get_number_of_inversions(a, b, 0, a.size()) << '\n';
+    int n;
+    std::cin >> n;
+    vector<int> a(n);
+    for (size_t i = 0; i < a.size(); i++) {
+        std::cin >> a[i];
+    }
+    vector<int> b(a.size());
+    std::cout << get_number_of_inversions(a, b, 0, a.size()) << '\n';
 }
