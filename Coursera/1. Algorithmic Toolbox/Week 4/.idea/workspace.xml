@@ -11,11 +11,11 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50af2e0b-f1f2-48f7-81e7-e579ebddcdf4" name="Default" comment="Problem 3 Complete but not yet Submitted">
+    <list default="true" id="50af2e0b-f1f2-48f7-81e7-e579ebddcdf4" name="Default" comment="Problem 4 Complete">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Week 4.iml" afterPath="$PROJECT_DIR$/.idea/Week 4.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inversions.cpp" afterPath="$PROJECT_DIR$/inversions.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/points_and_segments.cpp" afterPath="$PROJECT_DIR$/points_and_segments.cpp" />
     </list>
     <ignored path="Week 4.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,21 +39,34 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+            <state relative-caret-position="170">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inversions.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/inversions.cpp">
+      <file leaf-file-name="points_and_segments.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/points_and_segments.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+            <state relative-caret-position="0">
+              <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#80#137#1" expanded="false" />
+                <element signature="e#140#481#0" expanded="false" />
+                <element signature="e#2582#2916#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="binary_search.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/binary_search.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="18" column="1" selection-start-line="5" selection-start-column="0" selection-end-line="18" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,8 +82,9 @@
         <option value="$PROJECT_DIR$/binary_search.cpp" />
         <option value="$PROJECT_DIR$/majority_element.cpp" />
         <option value="$PROJECT_DIR$/sorting.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/inversions.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/points_and_segments.cpp" />
       </list>
     </option>
   </component>
@@ -354,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1467975130446</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Problem 4 Complete">
+      <created>1467993801132</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1467993801133</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -396,7 +417,8 @@
     <MESSAGE value="Week 4 : Initial Starter file" />
     <MESSAGE value="Problem 1 Complete&#10;Binary Search" />
     <MESSAGE value="Problem 3 Complete but not yet Submitted" />
-    <option name="LAST_COMMIT_MESSAGE" value="Problem 3 Complete but not yet Submitted" />
+    <MESSAGE value="Problem 4 Complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Problem 4 Complete" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -407,20 +429,46 @@
           <line>22</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/points_and_segments.cpp</url>
+          <line>64</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="15" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
-        <watch expression="a[i]" />
-        <watch expression="a[j]" />
+        <watch expression="segments[i].type" />
+        <watch expression="segments[i].position" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/points_and_segments.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#80#137#1" expanded="false" />
+            <element signature="e#140#481#0" expanded="false" />
+            <element signature="e#2582#2916#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -487,13 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/binary_search.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/majority_element.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
@@ -511,6 +552,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/inversions.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/binary_search.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="18" column="1" selection-start-line="5" selection-start-column="0" selection-end-line="18" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://C:/MinGW/lib/gcc/mingw32/4.9.3/include/c++/bits/stl_vector.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -519,20 +583,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+    <entry file="file://$PROJECT_DIR$/points_and_segments.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inversions.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+        <state relative-caret-position="0">
+          <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#80#137#1" expanded="false" />
+            <element signature="e#140#481#0" expanded="false" />
+            <element signature="e#2582#2916#0" expanded="false" />
           </folding>
         </state>
       </provider>
