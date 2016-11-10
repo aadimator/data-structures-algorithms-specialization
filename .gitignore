@@ -35,3 +35,9 @@
 input
 output
 test
+
+# CLion IDE
+*.iml
+
+## Directory-based project format:
+.idea/
