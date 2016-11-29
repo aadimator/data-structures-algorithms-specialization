@@ -13,10 +13,12 @@ struct Query {
 };
 
 class QueryProcessor {
+public:
     int bucket_count;
     // store all strings in one vector
-    vector<string> elems;
-    size_t hash_func(const string& s) const {
+    vector<vector<string>> elems;
+
+    size_t hash_func(const string &s) const {
         static const size_t multiplier = 263;
         static const size_t prime = 1000000007;
         unsigned long long hash = 0;
@@ -25,8 +27,9 @@ class QueryProcessor {
         return hash % bucket_count;
     }
 
-public:
-    explicit QueryProcessor(int bucket_count): bucket_count(bucket_count) {}
+    explicit QueryProcessor(int bucket_count) : bucket_count(bucket_count) {
+        elems.resize(bucket_count);
+    }
 
     Query readQuery() const {
         Query query;
@@ -42,24 +45,64 @@ public:
         std::cout << (was_found ? "yes\n" : "no\n");
     }
 
-    void processQuery(const Query& query) {
+    void add(const string &S) {
+        vector<string> list = elems[hash_func(S)];
+
+        for (int i = 0; i < list.size(); i++) {
+            if (list[i] == S) return;
+        }
+
+        list.insert(list.begin(), S);
+        elems[hash_func(S)] = list; // set this new list back to the 2D list from before
+    }
+
+    void del(string S) {
+        if (!find(S)) return;
+
+        vector<string> list = elems[hash_func(S)];
+
+        for (int i = 0; i < list.size(); i++) {
+            if (list[i] == S) list.erase(list.begin() + i); // deleting when found
+        }
+
+        elems[hash_func(S)] = list; // reassigning the list
+    }
+
+    bool find(const string &S) {
+        vector<string> list = elems[hash_func(S)];
+
+        for (int i = 0; i < list.size(); i++) {
+            if (list[i] == S) return true;
+        }
+
+        return false;
+    }
+
+    void check(size_t ind) {
+        vector<string> list = elems[ind];
+        for (int i = 0; i < list.size(); i++) {
+            std::cout << list[i] << ' ';
+        }
+
+        std::cout << '\n';
+    }
+
+    void processQuery(const Query &query) {
+
         if (query.type == "check") {
-            // use reverse order, because we append strings to the end
-            for (int i = static_cast<int>(elems.size()) - 1; i >= 0; --i)
-                if (hash_func(elems[i]) == query.ind)
-                    std::cout << elems[i] << " ";
-            std::cout << "\n";
-        } else {
-            vector<string>::iterator it = std::find(elems.begin(), elems.end(), query.s);
-            if (query.type == "find")
-                writeSearchResult(it != elems.end());
-            else if (query.type == "add") {
-                if (it == elems.end())
-                    elems.push_back(query.s);
-            } else if (query.type == "del") {
-                if (it != elems.end())
-                    elems.erase(it);
-            }
+            check(query.ind);
+        }
+
+        if (query.type == "add") {
+            add(query.s);
+        }
+
+        if (query.type == "del") {
+            del(query.s);
+        }
+
+        if (query.type == "find") {
+            writeSearchResult(find(query.s));
         }
     }
 
